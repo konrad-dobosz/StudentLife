@@ -14,7 +14,7 @@ if ((isset($_SESSION['logged'])) && ($_SESSION['logged'] == true)) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>StudentLife - panel logowania</title>
+    <title>StudentLife - logowanie</title>
 
     <link rel="stylesheet" href="css/login.css">
 </head>
@@ -28,6 +28,8 @@ if ((isset($_SESSION['logged'])) && ($_SESSION['logged'] == true)) {
             <input type="password" name="pass" placeholder="Hasło" id="pass">
 
             <button type="submit" name="submit">Zaloguj się</button>
+
+            <a href="register.php">Nie masz jeszcze konta? Zarejestruj</a>
             <?php
             if (isset($_SESSION['error']))
                 echo $_SESSION['error'];
