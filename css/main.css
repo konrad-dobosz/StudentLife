@@ -1,18 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
 
 body {
     margin: 0;
     padding: 0;
-    background: #4AC29A;
-    background: -webkit-linear-gradient(to right, #bdcdff, #4a66c2);
-    background: linear-gradient(to right, #bdcdff, #4a66c2);
     font-family: 'Quicksand', sans-serif;
 }
 
 main {
-    width: 100vw;
-    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 0.8rem;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+header h1 span {
+    color: rgba(0,0,0,0.4)
+}
+
+#cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+    border-radius: 12px;
+    width: calc(50% - 20px);
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+    font-size: 1rem;
+    height: 100px;
+    border: none;
+    margin-bottom: 1rem;
+    transition: background-color .2s ease-in-out;
+}
+    
+.card:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    body {
+        background: #4AC29A;
+        background: -webkit-linear-gradient(to right, #bdcdff, #4a66c2);
+        background: linear-gradient(to right, #bdcdff, #4a66c2);
+    
+    }
 }

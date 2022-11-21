@@ -22,7 +22,19 @@ require_once "db.php";
 
 <body>
     <main>
+        <header>
+            <h1>
+                Cześć, <br> <span>{NICK}</span>
+            </h1>
+            <p>U nas znajdziesz najlepsze wydarzenia i najnowsze informacje o Twoim kierunku!</p>
+        </header>
 
+        <section id="cards">
+            <button class="card">Wydarzenia</button>
+            <button class="card">Koła naukowe</button>
+            <button class="card">Wskazówki</button>
+            <button class="card">Pomoc</button>
+        </section>
     </main>
 </body>
 
