@@ -17,11 +17,13 @@ require_once "db.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentLife</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
+    <main>
 
+    </main>
 </body>
 
 </html>
