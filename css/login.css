@@ -3,9 +3,11 @@
 body {
     margin: 0;
     padding: 0;
-    background: #4AC29A;
-    background: -webkit-linear-gradient(to right, #bdcdff, #4a66c2);
-    background: linear-gradient(to right, #bdcdff, #4a66c2);
+    background: linear-gradient(-45deg, #cc1d51, #e73c7e, #c215cf, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -47,7 +49,7 @@ form button {
     margin-top: 1rem;
     padding: 0.7rem 0.7rem;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.7);
     font-weight: bold;
@@ -65,13 +67,14 @@ form a {
     text-decoration: none;
     align-self: center;
     margin-top: 1rem;
+    margin-bottom: 35%;
 }
 
 @media (min-width: 768px) {
     form {
-        height: auto;
+        height: 50%;
         width: 300px;
-        padding: 1rem 2rem;
+        padding: 0.5rem 2rem;
         border-radius: 20px;
     }
 
@@ -85,4 +88,16 @@ form a {
         margin-bottom: 1rem;
         font-size: 1rem;
     }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
