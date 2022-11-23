@@ -22,7 +22,7 @@ if ((isset($_SESSION['logged'])) && ($_SESSION['logged'] == true)) {
 <body>
     <main>
         <form action="register.php" method="post">
-            <img src="img/logo.svg" alt="Logo">
+            <img src="img/logo.png" alt="Logo">
             <h2>Stwórz nowe konto!</h2>
             <input type="text" name="login" placeholder="Login" id="login" required>
             <input type="email" name="email" placeholder="E-mail" id="email" required>

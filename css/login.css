@@ -72,14 +72,14 @@ form a {
 
 @media (min-width: 768px) {
     form {
-        height: 50%;
+        height: 67%;
         width: 300px;
         padding: 0.5rem 2rem;
         border-radius: 20px;
     }
 
     form img {
-        height: 120px;
+        height: 170px;
     }
 
     form input {
