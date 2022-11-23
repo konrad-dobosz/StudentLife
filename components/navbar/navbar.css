@@ -1,0 +1,37 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(192, 192, 192);
+    height: 3.5rem;
+}
+
+nav div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+h4 {
+    margin: 0;
+}
+
+h4 a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+nav img {
+    padding: 0 0.8rem;
+    height: 2.7rem;
+}
+
+#btn-logout {
+    align-self: center;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 0 0.8rem;
+}
