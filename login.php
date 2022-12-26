@@ -14,9 +14,10 @@ if ((isset($_SESSION['logged'])) && ($_SESSION['logged'] == true)) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>StudentLife - logowanie</title>
+    <title>Logowanie | StudentLife</title>
 
     <link rel="stylesheet" href="css/login.css">
+    <script src="js/show-password.js"></script>
 </head>
 
 <body>
@@ -26,6 +27,7 @@ if ((isset($_SESSION['logged'])) && ($_SESSION['logged'] == true)) {
             <h2>Zaloguj się!</h2>
             <input type="text" name="login" placeholder="Login" id="login">
             <input type="password" name="pass" placeholder="Hasło" id="pass">
+            <label><input type="checkbox" id="show-password" onclick="check(this)"> Pokaż hasło</label>
 
             <button type="submit" name="submit">Zaloguj się</button>
 
