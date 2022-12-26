@@ -21,19 +21,20 @@ require_once "db.php";
 </head>
 
 <body>
+    <?php include_once "components/navbar/navbar.php"; ?>
     <main>
         <header>
             <h1>
-                Cześć, <br> <span>{NICK}</span>
+                Cześć, <br> <span><?php echo $_SESSION['login']; ?></span>
             </h1>
             <p>U nas znajdziesz najlepsze wydarzenia i najnowsze informacje o Twoim kierunku!</p>
         </header>
 
         <section id="cards">
-            <button class="card">Wydarzenia</button>
-            <button class="card">Koła naukowe</button>
-            <button class="card">Wskazówki</button>
-            <button class="card">Pomoc</button>
+            <a class="card" href="events.php">Wydarzenia</a>
+            <a class="card" href="">Koła naukowe</a>
+            <a class="card" href="">Wskazówki</a>
+            <a class="card" href="">Pomoc</a>
         </section>
     </main>
 </body>
