@@ -26,17 +26,16 @@ require_once "db.php";
         <h3>Wydarzenia w Twojej okolicy:</h3>
         <section>
             <?php
-            require_once "db.php";
 
             if ($result = $connection->query(sprintf("SELECT * FROM events LIMIT 10"))) {
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $date = new DateTimeImmutable($row['date_start']);
 
-                        echo '<div class="event-card">';
+                        echo '<a href="event.php?id=' . $row['id'] . '" class="event-card">';
                         echo '<h4>' . $row['name'] . '<span> - ' . $row['address'] . '</span></h4>';
                         echo '<p>Zaczyna się ' . $date->format('d.m.Y') . ' o ' . $date->format('H:i') . '</p>';
-                        echo '</div>';
+                        echo '</a>';
                     }
                 } else {
                     echo '<p>Brak wydarzeń</p>';
