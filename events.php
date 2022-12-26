@@ -31,9 +31,11 @@ require_once "db.php";
             if ($result = $connection->query(sprintf("SELECT * FROM events LIMIT 10"))) {
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
+                        $date = new DateTimeImmutable($row['date_start']);
+
                         echo '<div class="event-card">';
-                        echo '<h4>' . $row['name'] . '</h4>';
-                        echo '<p>' . $row['description'] . '</p>';
+                        echo '<h4>' . $row['name'] . '<span> - ' . $row['address'] . '</span></h4>';
+                        echo '<p>Zaczyna się ' . $date->format('d.m.Y') . ' o ' . $date->format('H:i') . '</p>';
                         echo '</div>';
                     }
                 } else {

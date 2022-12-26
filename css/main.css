@@ -57,6 +57,17 @@ a.card {
     cursor: pointer;
 }
 
+.event-card {
+    border-radius: 12px;
+    background-color: rgb(192, 192, 192);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.event-card h4 span {
+    font-weight: normal;
+}
+
 @media (min-width: 768px) {
     
 }
