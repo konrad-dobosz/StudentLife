@@ -23,7 +23,7 @@ if ((isset($_SESSION['logged'])) && ($_SESSION['logged'] == true)) {
 <body>
     <main>
         <form action="login.php" method="post">
-            <img src="img/logo1.png" alt="Logo">
+            <img src="img/logo.png" alt="Logo">
             <h2>Zaloguj się!</h2>
             <input type="text" name="login" placeholder="Login" id="login">
             <input type="password" name="pass" placeholder="Hasło" id="pass">
