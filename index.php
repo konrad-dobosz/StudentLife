@@ -25,7 +25,7 @@ require_once "db.php";
     <main>
         <header>
             <h1>
-                Cześć, <br> <span><?php echo $_SESSION['login']; ?></span>
+                Cześć, <span><?php echo $_SESSION['login']; ?></span>
             </h1>
             <p>U nas znajdziesz najlepsze wydarzenia i najnowsze informacje o Twoim kierunku!</p>
         </header>
