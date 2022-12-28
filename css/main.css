@@ -4,24 +4,27 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Quicksand', sans-serif;
+    background-image: url("../img/background.png");
 }
 
 main {
     display: flex;
     flex-direction: column;
-    background-color: #fff;
+    background-color: 002233;
     margin-left: auto;
     margin-right: auto;
     padding: 0 0.8rem;
+    color: white;
 }
 
 header h1 {
     font-size: 2.2rem;
     font-weight: 600;
+    color:white;
 }
 
 header h1 span {
-    color: rgba(0,0,0,0.4)
+    color: white;
 }
 
 #cards {
@@ -53,7 +56,7 @@ a.card {
 }
     
 .card:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(44, 33, 38, 0.8);
     cursor: pointer;
 }
 
