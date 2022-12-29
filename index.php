@@ -18,11 +18,14 @@ require_once "db.php";
     <title>StudentLife</title>
 
     <link rel="stylesheet" href="css/main.css">
+    <script type = "text/javascript" src = "js/index.js" defer></script>
 </head>
 
 <body>
-    <?php include_once "components/navbar/navbar.php"; ?>
+    <?php include_once "components/navbar/indexnavbar.php"; ?>
     <main>
+        <section class = "menu">
+        </section>
         <header>
             <h1>
                 Cześć, <span><?php echo $_SESSION['login']; ?></span>
@@ -30,13 +33,10 @@ require_once "db.php";
             <p>U nas znajdziesz najlepsze wydarzenia i najnowsze informacje o Twoim kierunku!</p>
         </header>
 
-        <section id="cards">
-            <a class="card" href="events.php">Wydarzenia</a>
-            <a class="card" href="">Koła naukowe</a>
-            <a class="card" href="">Wskazówki</a>
-            <a class="card" href="">Pomoc</a>
-        </section>
     </main>
+    <footer class = "footer">
+        Placeholder
+    </footer>
 </body>
 
 </html>

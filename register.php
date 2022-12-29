@@ -28,7 +28,7 @@ if ((isset($_SESSION['logged'])) && ($_SESSION['logged'] == true)) {
             <input type="text" name="login" placeholder="Login" id="login" required>
             <input type="email" name="email" placeholder="E-mail" id="email" required>
             <input type="password" name="pass" placeholder="Hasło" id="pass" required>
-            <input type="password" name="pass_verify" placeholder="Powtórz hasło" id="pass_verify" required>
+            <input type="password" name="pass_verify" placeholder="Powtórz hasło" id="pass" required>
             <label><input type="checkbox" id="show-password" onclick="check(this)"> Pokaż hasło</label>
 
             <button type="submit" name="submit">Załóż konto</button>
