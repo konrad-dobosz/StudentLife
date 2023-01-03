@@ -28,15 +28,6 @@ nav img {
     height: 2.7rem;
 }
 
-#btn-logout {
-    align-self: center;
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 1.1rem;
-    text-decoration: none;
-    padding: 0 0.8rem;
-}
-
-
 .dropbtn {
     background-color: rgb(192, 192, 192);
     color: rgba(0, 0, 0, 0.6);
@@ -48,20 +39,22 @@ nav img {
 
  
   .dropdown {
-    position: relative;
-    display: inline-block;
-    width: 6vw;
+    display: flex;
+    justify-content: right;
+    align-items: flex-start;
     margin-top: 0.32em;
+    width: 3%;
+    right: 1%;
   }
 
   .dropdown-content {
     display: none;
-    position: absolute;
+    position: fixed;
     background-color: #f9f9f9;
     min-width: 169px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    max-width: 200px;
     z-index: 1;
-    right: 2vw;
+    right: 1vw;
   }
 
   .dropdown-content a {
@@ -71,9 +64,15 @@ nav img {
     display: block;
   }
 
-  .dropdown-content a:hover {background-color: #f1f1f1}
+  .dropdown-content a:hover {
+    background-color: #f1f1f1
+  }
 
 
   .dropdown:hover .dropdown-content {
-    display: block;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.6%;
   }
