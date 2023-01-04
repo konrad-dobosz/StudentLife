@@ -26,20 +26,21 @@ require_once "../db.php";
             <a href="index.php">
                 <- Powrót</a>
 
-                    <form>
+                    <form method="post">
                         <?php
                         switch ($_GET['mode']) {
                             case 'create':
                         ?>
-                                <label>Nazwa wydarzenia <input type="text" value=""></label>
-                                <label>Adres <input type="text" value=""></label>
-                                <label>Data <input type="datetime-local" name="" id=""></label>
+                                <label>Nazwa wydarzenia <input type="text" name="name"></label>
+                                <label>Adres <input type="text" name="address"></label>
+                                <label>Data rozpoczęcia<input type="datetime-local" name="date_start" id=""></label>
+                                <label>Data zakończenia<input type="datetime-local" name="date_end" id=""></label>
 
                                 <label>
                                     Opis
-                                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                                    <textarea name="description" id="" cols="30" rows="10"></textarea>
                                 </label>
-                                <button type="submit">Zapisz</button>
+                                <button type="submit" name="submit">Zapisz</button>
 
                                 <?php
                                 break;
@@ -47,17 +48,19 @@ require_once "../db.php";
                                 if ($result = $connection->query(sprintf("SELECT * FROM events WHERE id=" . $_GET['id'] . " LIMIT 1"))) {
                                     if ($result->num_rows > 0) {
                                         $row = $result->fetch_assoc();
-                                        $date = new DateTime($row['date_start']);
+                                        $date_start = new DateTime($row['date_start']);
+                                        $date_end = new DateTime($row['date_end']);
                                 ?>
-                                        <label>Nazwa wydarzenia <input type="text" value="<?php echo $row['name']; ?>"></label>
-                                        <label>Adres <input type="text" value="<?php echo $row['address']; ?>"></label>
-                                        <label>Data <input type="datetime-local" name="" id="" value="<?php echo $date->format('Y-m-d\TH:i'); ?>"></label>
+                                        <label>Nazwa wydarzenia <input type="text" value="<?php echo $row['name']; ?>" name="name"></label>
+                                        <label>Adres <input type="text" value="<?php echo $row['address']; ?>" name="address"></label>
+                                        <label>Data rozpoczęcia<input type="datetime-local" name="date_start" id="" value="<?php echo $date_start->format('Y-m-d\TH:i'); ?>"></label>
+                                        <label>Data zakończenia<input type="datetime-local" name="date_end" id="" value="<?php echo $date_end->format('Y-m-d\TH:i'); ?>"></label>
 
                                         <label>
                                             Opis
-                                            <textarea name="" id="" cols="30" rows="10"><?php echo $row['description']; ?></textarea>
+                                            <textarea name="description" id="" cols="30" rows="10"><?php echo $row['description']; ?></textarea>
                                         </label>
-                                        <button type="submit">Zapisz</button>
+                                        <button type="submit" name="submit">Zapisz</button>
 
                         <?php
 
@@ -69,6 +72,21 @@ require_once "../db.php";
                             default:
                                 header('Location: index.php');
                                 break;
+                        }
+
+                        if (isset($_POST['submit'])) {
+                            $id = $_GET['id'];
+                            $name = $_POST['name'];
+                            $address = $_POST['address'];
+                            $description = $_POST['description'];
+                            $date_start = $_POST['date_start'];
+                            $date_end = $_POST['date_end'];
+
+                            if ($_GET['mode'] == 'edit') {
+                                $connection->query("UPDATE events SET name = '$name', address = '$address', description = '$description', date_start = '$date_start', date_end = '$date_end' WHERE id = '$id'");
+                            } else if ($_GET['mode'] == 'create') {
+                                $connection->query("INSERT INTO events SET name = '$name', address = '$address', description = '$description', date_start = '$date_start', date_end = '$date_end'");
+                            }
                         }
                         ?>
                     </form>
