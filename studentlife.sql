@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 21, 2022 at 11:07 PM
+-- Generation Time: Jan 04, 2023 at 10:02 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.6
 
@@ -24,6 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `description` text NOT NULL,
+  `date_start` datetime NOT NULL,
+  `date_end` datetime NOT NULL,
+  `address` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -31,19 +46,19 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `login` text NOT NULL,
   `email` text NOT NULL,
+  `isAdmin` tinyint(1) NOT NULL DEFAULT 0,
   `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `login`, `email`, `password`) VALUES
-(1, 'admin', '', '$2y$10$8v/.5zVjDQqkQMmGP0r.h.DJOHHJTNoiWP/Ln6nRiNh7GAd4Y1oti');
-
---
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -56,10 +71,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
