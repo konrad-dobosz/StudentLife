@@ -1,12 +1,20 @@
 <?php
 session_start();
 
+require_once "../db.php";
+
 if ((!isset($_SESSION['logged'])) && ($_SESSION['logged'] != true)) {
     header('Location: login.php');
     exit();
+} else {
+    $id = $_SESSION['id'];
+    if ($result = $connection->query("SELECT id, isAdmin FROM users WHERE id='$id' AND isAdmin=1")) {
+        if ($result->num_rows == 0) {
+            header('Location: ../index.php');
+            exit();
+        }
+    }
 }
-
-require_once "../db.php";
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -21,6 +29,13 @@ require_once "../db.php";
 </head>
 
 <body>
+    <nav>
+        <div>
+            <img src="../img/logo.png" alt="Logo">
+            <h4><a href="index.php">Admin | Student Life</a></h4>
+        </div>
+        <a id="btn-back" href="../">Strona główna</a>
+    </nav>
     <main>
         <section>
             <form>

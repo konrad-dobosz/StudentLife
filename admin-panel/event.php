@@ -1,12 +1,20 @@
 <?php
 session_start();
 
+require_once "../db.php";
+
 if ((!isset($_SESSION['logged'])) && ($_SESSION['logged'] != true)) {
     header('Location: login.php');
     exit();
+} else {
+    $id = $_SESSION['id'];
+    if ($result = $connection->query("SELECT id, isAdmin FROM users WHERE id='$id' AND isAdmin=1")) {
+        if ($result->num_rows == 0) {
+            header('Location: index.php');
+            exit();
+        }
+    }
 }
-
-require_once "../db.php";
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -31,14 +39,14 @@ require_once "../db.php";
                         switch ($_GET['mode']) {
                             case 'create':
                         ?>
-                                <label>Nazwa wydarzenia <input type="text" name="name"></label>
-                                <label>Adres <input type="text" name="address"></label>
-                                <label>Data rozpoczęcia<input type="datetime-local" name="date_start" id=""></label>
-                                <label>Data zakończenia<input type="datetime-local" name="date_end" id=""></label>
+                                <label>Nazwa wydarzenia <input type="text" name="name" required></label>
+                                <label>Adres <input type="text" name="address" required></label>
+                                <label>Data rozpoczęcia<input type="datetime-local" name="date_start" id="" required></label>
+                                <label>Data zakończenia<input type="datetime-local" name="date_end" id="" required></label>
 
                                 <label>
                                     Opis
-                                    <textarea name="description" id="" cols="30" rows="10"></textarea>
+                                    <textarea name="description" id="" cols="30" rows="10" required></textarea>
                                 </label>
                                 <button type="submit" name="submit">Zapisz</button>
 
@@ -82,10 +90,14 @@ require_once "../db.php";
                             $date_start = $_POST['date_start'];
                             $date_end = $_POST['date_end'];
 
-                            if ($_GET['mode'] == 'edit') {
-                                $connection->query("UPDATE events SET name = '$name', address = '$address', description = '$description', date_start = '$date_start', date_end = '$date_end' WHERE id = '$id'");
-                            } else if ($_GET['mode'] == 'create') {
-                                $connection->query("INSERT INTO events SET name = '$name', address = '$address', description = '$description', date_start = '$date_start', date_end = '$date_end'");
+                            if (empty($id) || empty($name) || empty($address) || empty($description || empty($date_start)) || empty($date_end)) {
+                                // TODO: Add field error handling
+                            } else {
+                                if ($_GET['mode'] == 'edit') {
+                                    $connection->query("UPDATE events SET name = '$name', address = '$address', description = '$description', date_start = '$date_start', date_end = '$date_end' WHERE id = '$id'");
+                                } else if ($_GET['mode'] == 'create') {
+                                    $connection->query("INSERT INTO events SET name = '$name', address = '$address', description = '$description', date_start = '$date_start', date_end = '$date_end'");
+                                }
                             }
                         }
                         ?>
