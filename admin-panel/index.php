@@ -25,11 +25,12 @@ require_once "../db.php";
         <section>
             <form>
                 <h4>Lista wydarzeń</h4>
+                <a href="event.php?mode=create" class="event-row">+ Dodaj nowe wydarzenie</a>
                 <?php
                 if ($result = $connection->query(sprintf("SELECT * FROM events LIMIT 10"))) {
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            echo '<a href="event-edit.php?id=' . $row['id'] . '" class="event-row">' . $row['name'] . '</a>';
+                            echo '<a href="event.php?mode=edit&id=' . $row['id'] . '" class="event-row">' . $row['name'] . '</a>';
                         }
                     } else {
                         echo '<p>Brak wydarzeń</p>';
