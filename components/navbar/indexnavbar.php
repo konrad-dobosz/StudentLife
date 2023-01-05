@@ -15,5 +15,14 @@
             <a href="logout.php">Wyloguj</a>
         </div>
     </div>
-    
+
+    <div class="menu">
+        <div class="menu-content">
+            <a href="events.php">Wydarzenia</a>
+            <a href="#">Koła naukowe</a>
+            <a href="#">Wskazówki</a>
+            <a href ="#">Pomoc</a>
+            <a href="logout.php">Wyloguj</a>
+        </div>
+    </div>
 </nav>
