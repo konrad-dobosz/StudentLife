@@ -26,13 +26,18 @@ require_once "db.php";
     <main>
         <section class = "menu">
         </section>
-        <header>
-            <h1>
-                Cześć, <span><?php echo $_SESSION['login']; ?></span>
-            </h1>
-            <p>U nas znajdziesz najlepsze wydarzenia i najnowsze informacje o Twoim kierunku!</p>
-        </header>
 
+        <section class="section-content">
+            <h2>Witaj w StudentLife, <span><?php echo $_SESSION['login']; ?></span></h2>
+                <p>Jesteśmy tutaj, aby dostarczyć informacje na tematy uniwersyteckie i studenckie, w tym:</p>
+                    <ul>
+                        <li>Politechnika</li>
+                        <li>Planowanie karriery</li>
+                        <li>Pomoc finansowa</li>
+                        <li>Imprezy i zajęcia na kampusie</li>
+                    </ul>
+                <p>Przeglądaj naszą witrynę, aby znaleźć wskazówki, porady i zasoby, które pomogą Ci odnieść sukces na studiach i poza nimi.</p>
+        </section>
     </main>
     <footer class = "footer">
         Placeholder
