@@ -39,9 +39,18 @@ require_once "db.php";
                 <p>Przeglądaj naszą witrynę, aby znaleźć wskazówki, porady i zasoby, które pomogą Ci odnieść sukces na studiach i poza nimi.</p>
         </section>
     </main>
-    <footer class = "footer">
-        Placeholder
-    </footer>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section authors">
+                <p>Twórcy:</p>
+                     <ul>
+                        <li>Miłosz Wciśliński</li>
+                        <li>Konrad Dobosz</li>
+                    </ul>
+            </div>      
+        </div>
+        <div class="copyright">&copy; StudentLife 2023</div>
+</footer>
 </body>
 
 </html>
