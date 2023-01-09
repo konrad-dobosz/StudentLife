@@ -77,9 +77,13 @@ header h1 span {
 }
 
 @media only screen and (max-width: 900px) {
-  .footer-section authors{
+  .footer-section{
       position: absolute;
       bottom: 0;
+  }
+
+  .copyright {
+    float: right;
   }
 }
 

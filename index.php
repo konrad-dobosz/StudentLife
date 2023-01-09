@@ -41,7 +41,7 @@ require_once "db.php";
     </main>
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-section authors">
+            <div class="footer-section">
                 <p>Twórcy:</p>
                      <ul>
                         <li>Miłosz Wciśliński</li>
