@@ -37,6 +37,11 @@ if ((!isset($_SESSION['logged'])) && ($_SESSION['logged'] != true)) {
                     <form method="post">
                         <?php
                         $error_msg = '';
+                        $confirm_delete = false;
+
+                        if (isset($_POST['submit-remove'])) {
+                            $confirm_delete = true;
+                        }
 
                         switch ($_GET['mode']) {
                             case 'create':
@@ -74,7 +79,12 @@ if ((!isset($_SESSION['logged'])) && ($_SESSION['logged'] != true)) {
                                                 <textarea name="description" id="" cols="30" rows="10" required><?php echo $row['description']; ?></textarea>
                                             </label>
                                             <button type="submit" name="submit">Zapisz</button>
-                                            <button type="submit" id="event-remove" name="submit-remove">Usuń wydarzenie</button>
+
+                                            <?php if (!$confirm_delete) : ?>
+                                                <button type="submit" id="event-remove" name="submit-remove">Usuń wydarzenie</button>
+                                            <?php else : ?>
+                                                <button type="submit" id="event-remove" name="submit-remove-confirm">Potwierdź usunięcie wydarzenia</button>
+                                            <?php endif; ?>
 
                         <?php
 
@@ -113,9 +123,8 @@ if ((!isset($_SESSION['logged'])) && ($_SESSION['logged'] != true)) {
                             }
                         }
 
-                        if (isset($_POST['submit-remove'])) {
+                        if (isset($_POST['submit-remove-confirm'])) {
                             $id = $_GET['id'];
-
                             $connection->query("DELETE FROM events WHERE id='$id'");
                             header('Location: index.php');
                         }
