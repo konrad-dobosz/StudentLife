@@ -22,7 +22,7 @@ require_once "db.php";
 </head>
 
 <body>
-    <?php include_once "components/navbar/navbar.php"; ?>
+    <?php include_once "components/navbar/indexnavbar.php"; ?>
     <main>
         <h3>Koła naukowe na naszej uczelni:</h3>
         <section id="section-science-clubs">

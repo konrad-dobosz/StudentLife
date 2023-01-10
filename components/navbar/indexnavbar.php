@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/indexNavbar.css">
+<link rel="stylesheet" href="components/navbar/indexnavbar.css">
 <nav id="navbar">
     <div>
         <img src="img/logo.png" alt="Logo">
@@ -11,7 +11,7 @@
             <a href="events.php">Wydarzenia</a>
             <a href="science-clubs.php">Koła naukowe</a>
             <a href="tips.php">Wskazówki</a>
-            <a href ="#">Pomoc</a>
+            <a href="help.php">Pomoc</a>
             <a href="logout.php">Wyloguj</a>
         </div>
     </div>
@@ -21,7 +21,7 @@
             <a href="events.php">Wydarzenia</a>
             <a href="science-clubs.php">Koła naukowe</a>
             <a href="tips.php">Wskazówki</a>
-            <a href ="#">Pomoc</a>
+            <a href="help.php">Pomoc</a>
             <a href="logout.php">Wyloguj</a>
         </div>
     </div>
