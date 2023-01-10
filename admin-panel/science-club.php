@@ -65,14 +65,14 @@ if ((!isset($_SESSION['logged'])) && ($_SESSION['logged'] != true)) {
                                             <button type="submit" name="submit">Zapisz</button>
 
                                             <?php if (!$confirm_delete) : ?>
-                                                <button type="submit" id="event-remove" name="submit-remove">Usuń wydarzenie</button>
+                                                <button type="submit" id="event-remove" name="submit-remove">Usuń koło naukowe</button>
                                             <?php else : ?>
-                                                <button type="submit" id="event-remove" name="submit-remove-confirm">Potwierdź usunięcie wydarzenia</button>
+                                                <button type="submit" id="event-remove" name="submit-remove-confirm">Potwierdź usunięcie koła naukowego</button>
                                             <?php endif; ?>
                             <?php
 
                                         } else {
-                                            echo '<h2>Brak wydarzenia o podanym id</h2>';
+                                            echo '<h2>Brak koła naukowego o podanym id</h2>';
                                         }
                                     }
                                 }
