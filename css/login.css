@@ -28,9 +28,8 @@ form {
 }
 
 form img {
-    justify-self: center;
-    height: 200px;
-    width: 100%;
+    align-self: center;
+    height: 300px;
 }
 
 form h2 {
