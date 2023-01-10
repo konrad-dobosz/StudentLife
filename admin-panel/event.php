@@ -30,7 +30,7 @@ if ((!isset($_SESSION['logged'])) && ($_SESSION['logged'] != true)) {
 
 <body>
     <main>
-        <section>
+        <section class="edit">
             <a href="index.php">
                 <- Powrót</a>
 

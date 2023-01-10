@@ -18,24 +18,29 @@ require_once "db.php";
     <title>Wydarzenia | StudentLife</title>
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/card.css">
 </head>
 
 <body>
     <?php include_once "components/navbar/navbar.php"; ?>
     <main>
         <h3>Wydarzenia w Twojej okolicy:</h3>
-        <section>
+        <section id="section-events">
             <?php
 
             if ($result = $connection->query(sprintf("SELECT * FROM events LIMIT 10"))) {
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $date = new DateTimeImmutable($row['date_start']);
+            ?>
+                        <a href="event.php?id=<?php echo $row['id']; ?>">
+                            <div class="card">
+                                <h4><?php echo $row['name']; ?> - <span><?php echo $row['address']; ?></span></h4>
+                                <p>Zaczyna się <?php echo $date->format('d.m.Y'); ?> o <?php echo $date->format('H:i'); ?></p>
 
-                        echo '<a href="event.php?id=' . $row['id'] . '" class="event-card">';
-                        echo '<h4>' . $row['name'] . '<span> - ' . $row['address'] . '</span></h4>';
-                        echo '<p>Zaczyna się ' . $date->format('d.m.Y') . ' o ' . $date->format('H:i') . '</p>';
-                        echo '</a>';
+                            </div>
+                        </a>
+            <?php
                     }
                 } else {
                     echo '<p>Brak wydarzeń</p>';

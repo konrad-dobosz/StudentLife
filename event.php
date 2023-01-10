@@ -31,11 +31,13 @@ require_once "db.php";
                     if ($result = $connection->query(sprintf("SELECT * FROM events WHERE id=" . $_GET['id'] . " LIMIT 1"))) {
                         if ($result->num_rows > 0) {
                             $row = $result->fetch_assoc();
-                            $date = new DateTimeImmutable($row['date_start']);
+                            $date_start = new DateTimeImmutable($row['date_start']);
+                            $date_end = new DateTimeImmutable($row['date_end']);
 
                             echo '<h2>' . $row['name'] . '</h2>';
                             echo '<p>Miejsce: ' . $row['address'] . '</p>';
-                            echo '<p>Kiedy: ' . $date->format('d.m.Y') . ' o ' . $date->format('H:i') . '</p>';
+                            echo '<p>Kiedy: ' . $date_start->format('d.m.Y') . ' o ' . $date_start->format('H:i') . '</p>';
+                            echo '<p>Kończy się: ' . $date_end->format('d.m.Y') . ' o ' . $date_end->format('H:i') . '</p>';
 
                             echo '<p>' . $row['description'] . '</p>';
                         } else {
