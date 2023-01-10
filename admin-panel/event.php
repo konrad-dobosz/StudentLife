@@ -100,7 +100,7 @@ if ((!isset($_SESSION['logged'])) && ($_SESSION['logged'] != true)) {
                         }
 
                         if (isset($_POST['submit'])) {
-                            $id = $_GET['id'];
+                            $id = (isset($_GET['id']) ? $_GET['id'] : '');
                             $name = $_POST['name'];
                             $address = $_POST['address'];
                             $description = $_POST['description'];
@@ -118,7 +118,7 @@ if ((!isset($_SESSION['logged'])) && ($_SESSION['logged'] != true)) {
                                         header('Location: index.php');
                                     }
                                 } else if ($_GET['mode'] == 'create') {
-                                    $connection->query("INSERT INTO events SET name = '$name', address = '$address', description = '$description', date_start = '$date_start', date_end = '$date_end'");
+                                    $connection->query("INSERT INTO events (name, description, date_start, date_end, address) VALUES ('$name', '$description', '$date_start', '$date_end', '$address')");
                                 }
                             }
                         }
