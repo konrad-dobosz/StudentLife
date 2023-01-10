@@ -54,6 +54,23 @@ if ((!isset($_SESSION['logged'])) && ($_SESSION['logged'] != true)) {
                 ?>
             </form>
         </section>
+        <section>
+            <form>
+                <h4>Lista kół naukowych</h4>
+                <a href="science-club.php?mode=create" class="event-row">+ Dodaj nowe koło naukowe</a>
+                <?php
+                if ($result = $connection->query(sprintf("SELECT * FROM science_clubs LIMIT 10"))) {
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<a href="science-club.php?mode=edit&id=' . $row['id'] . '" class="event-row">' . $row['name'] . '</a>';
+                        }
+                    } else {
+                        echo '<p>Brak kół naukowych</p>';
+                    }
+                }
+                ?>
+            </form>
+        </section>
     </main>
 </body>
 
