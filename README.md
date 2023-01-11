@@ -10,12 +10,14 @@ The website requires the Google Chrome web browser version 109.0.5414.85 (Januar
 ## Example usage
 
 Login page:
-![image](https://user-images.githubusercontent.com/118298568/211671558-8692483f-3480-4501-96fe-48548b9f2034.png)
+<img width="1296" alt="image" src="https://user-images.githubusercontent.com/115871357/211842893-91f7ae42-a507-405a-95ab-dfcaa78886e9.png">
+
 
 Main page:
 ![image](https://user-images.githubusercontent.com/118298568/211671677-d54e2a04-7978-45ec-9a5c-d3e4a5023c0a.png)
 
 Admin Panel:
+<img width="1298" alt="image" src="https://user-images.githubusercontent.com/115871357/211843500-ec0c18d3-daec-469c-a704-07c5c4399dcd.png">
 
 
 ## Licensing Information
@@ -23,7 +25,7 @@ The website is owned by the university.
 
 
 ## Troubleshooting
-The page contains internal tools on the help page for reporting bugs.
+If you will find any problems with this website, you are welcome to create a new [issue](https://github.com/konrad-dobosz/StudentLife/issues/new), we will try to help you as soon as possible!
 
 
 ## Credits
