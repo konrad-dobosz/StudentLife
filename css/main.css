@@ -76,6 +76,46 @@ header h1 span {
   text-align: center;
 }
 
+.section-content {
+    margin: 2rem 0;
+    text-align: center;
+}
+  
+.section-content h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+}
+  
+.section-content p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: white;
+  margin-bottom: 2rem;
+}
+  
+.section-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+  
+.section-content ul li {
+  font-size: 1.4rem;
+  color: white;
+  margin: 0 1rem;
+}
+
+#section-events,
+#section-science-clubs {
+  display: flex;
+  flex-direction: column;
+}
+
 @media only screen and (max-width: 900px) {
   .footer-section{
       position: absolute;
@@ -87,36 +127,9 @@ header h1 span {
   }
 }
 
-.section-content {
-    margin: 2rem 0;
-    text-align: center;
+@media (min-width: 768px) {
+  #section-events {
+      flex-direction: row;
+      flex-wrap: wrap;
   }
-  
-  .section-content h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 1rem;
-  }
-  
-  .section-content p {
-    font-size: 1.4rem;
-    line-height: 1.5;
-    color: white;
-    margin-bottom: 2rem;
-  }
-  
-  .section-content ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .section-content ul li {
-    font-size: 1.4rem;
-    color: white;
-    margin: 0 1rem;
-  }
+}

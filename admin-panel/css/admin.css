@@ -7,6 +7,11 @@ body {
     background-color: #fff;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+}
+
 nav {
     display: flex;
     flex-direction: row;
@@ -110,6 +115,10 @@ form .event-row:hover {
 }
 
 @media (min-width: 768px) {
+    main {
+        flex-direction: row;
+    }
+
     input, textarea {
         padding: 0.8rem 0.7rem;
         margin-bottom: 1rem;

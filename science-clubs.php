@@ -18,22 +18,26 @@ require_once "db.php";
     <title>Koła naukowe | StudentLife</title>
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/card.css">
 </head>
 
 <body>
-    <?php include_once "components/navbar/navbar.php"; ?>
+    <?php include_once "components/navbar/indexnavbar.php"; ?>
     <main>
         <h3>Koła naukowe na naszej uczelni:</h3>
-        <section>
+        <section id="section-science-clubs">
             <?php
 
             if ($result = $connection->query(sprintf("SELECT * FROM science_clubs LIMIT 10"))) {
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-
-                        echo '<a href="science-club.php?id=' . $row['id'] . '" class="event-card">';
-                        echo '<h4>' . $row['name'] . '</h4>';
-                        echo '</a>';
+            ?>
+                        <a href="science-club.php?id=<?php echo $row['id']; ?>">
+                            <div class="card">
+                                <h4><?php echo $row['name']; ?></h4>
+                            </div>
+                        </a>
+            <?php
                     }
                 } else {
                     echo '<p>Brak kół naukowych</p>';
