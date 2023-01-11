@@ -4,8 +4,13 @@ The Student Life website was created to help new students find helpful informati
 
 
 ## Installation instructions
-The website requires the Google Chrome web browser version 109.0.5414.85 (January 9, 2023) or Safari 12.1.2 (July 22, 2019) and the xampp database package.
+The recommended browsers are the Google Chrome 108.0.5359.172, Firefox 108.0.2 or Safari 16.1. In order to start this website you need to:
 
+- Install XAMPP
+- Create new database and import studentlife.sql 
+- Edit mysql data in db.php
+
+And that is it, you should now have perfectly running website!
 
 ## Example usage
 
