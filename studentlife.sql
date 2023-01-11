@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 04, 2023 at 10:02 PM
+-- Generation Time: Jan 11, 2023 at 04:20 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.6
 
@@ -39,6 +39,36 @@ CREATE TABLE `events` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `help`
+--
+
+CREATE TABLE `help` (
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `description` text NOT NULL,
+  `email` text NOT NULL,
+  `type` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `science_clubs`
+--
+
+CREATE TABLE `science_clubs` (
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `web` text NOT NULL,
+  `description` text NOT NULL,
+  `faculty` text NOT NULL,
+  `meetings` text NOT NULL,
+  `contact` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -61,6 +91,18 @@ ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `help`
+--
+ALTER TABLE `help`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `science_clubs`
+--
+ALTER TABLE `science_clubs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -74,6 +116,18 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `help`
+--
+ALTER TABLE `help`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `science_clubs`
+--
+ALTER TABLE `science_clubs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
