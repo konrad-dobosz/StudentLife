@@ -21,7 +21,7 @@ require_once "db.php";
 </head>
 
 <body>
-    <?php include_once "components/navbar/navbar.php"; ?>
+    <?php include_once "components/navbar/indexnavbar.php"; ?>
     <main>
         <section>
             <a href="science-clubs.php">
@@ -33,6 +33,12 @@ require_once "db.php";
                             $row = $result->fetch_assoc();
 
                             echo '<h2>' . $row['name'] . '</h2>';
+                            echo '<h4><a href="' . $row['web'] . '">' . $row['web'] . '</a></h4>';
+                            echo '<p>Wydział ' . $row['faculty'] . '</p>';
+                            echo '<p>Gdzie i kiedy się spotykamy?: ' . $row['meetings'] . '</p>';
+                            echo '<p>Kontakt: ' . $row['contact'] . '</p>';
+
+                            echo '<p>' . $row['description'] . '</p>';
                         } else {
                             echo '<h2>Brak koła naukowego o podanym id</h2>';
                         }

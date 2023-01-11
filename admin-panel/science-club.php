@@ -47,6 +47,15 @@ if ((!isset($_SESSION['logged'])) && ($_SESSION['logged'] != true)) {
                             case 'create':
                         ?>
                                 <label>Nazwa <input type="text" name="name" required></label>
+                                <label>Strona internetowa <input type="text" name="web" required></label>
+                                <label>Wydział <input type="text" name="faculty" required></label>
+                                <label>Spotkania <input type="text" name="meetings" required></label>
+                                <label>Kontakt <input type="text" name="contact" required></label>
+
+                                <label>
+                                    Opis
+                                    <textarea name="description" id="" cols="30" rows="10" required></textarea>
+                                </label>
 
                                 <button type="submit" name="submit">Zapisz</button>
 
@@ -61,6 +70,16 @@ if ((!isset($_SESSION['logged'])) && ($_SESSION['logged'] != true)) {
                                             $row = $result->fetch_assoc();
                                 ?>
                                             <label>Nazwa <input type="text" value="<?php echo $row['name']; ?>" name="name" required></label>
+                                            <label>Strona internetowa <input type="text" value="<?php echo $row['web']; ?>" name="web" required></label>
+                                            <label>Wydział <input type="text" value="<?php echo $row['faculty']; ?>" name="faculty" required></label>
+                                            <label>Spotkania <input type="text" value="<?php echo $row['meetings']; ?>" name="meetings" required></label>
+                                            <label>Kontakt <input type="text" value="<?php echo $row['contact']; ?>" name="contact" required></label>
+
+                                            <label>
+                                                Opis
+                                                <textarea name="description" id="" cols="30" rows="10" required><?php echo $row['description']; ?></textarea>
+                                            </label>
+
 
                                             <button type="submit" name="submit">Zapisz</button>
 
@@ -85,19 +104,24 @@ if ((!isset($_SESSION['logged'])) && ($_SESSION['logged'] != true)) {
                         if (isset($_POST['submit'])) {
                             $id = $_GET['id'];
                             $name = $_POST['name'];
+                            $web = $_POST['web'];
+                            $description = $_POST['description'];
+                            $faculty = $_POST['faculty'];
+                            $meetings = $_POST['meetings'];
+                            $contact = $_POST['contact'];
 
-                            if (empty($name)) {
+                            if (empty($name) || empty($web) || empty($description) || empty($faculty) || empty($meetings) || empty($contact)) {
                                 $error_msg = 'Należy wypełnić każde pole!';
                             } else {
                                 if ($_GET['mode'] == 'edit') {
                                     if (empty($id)) {
                                         $error_msg = 'Nie podano id';
                                     } else {
-                                        $connection->query("UPDATE science_clubs SET name = '$name' WHERE id = '$id'");
+                                        $connection->query("UPDATE science_clubs SET name = '$name', web = '$web', description = '$description', faculty = '$faculty', meetings = '$meetings', contact = '$contact' WHERE id = '$id'");
                                         header('Location: index.php');
                                     }
                                 } else if ($_GET['mode'] == 'create') {
-                                    $connection->query("INSERT INTO science_clubs SET name = '$name'");
+                                    $connection->query("INSERT INTO science_clubs (name, web, description, faculty, meetings, contact) VALUES ('$name', '$web', '$description', '$faculty', '$meetings', '$contact')");
                                 }
                             }
                         }

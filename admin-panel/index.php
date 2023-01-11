@@ -71,6 +71,22 @@ if ((!isset($_SESSION['logged'])) && ($_SESSION['logged'] != true)) {
                 ?>
             </form>
         </section>
+        <section>
+            <form>
+                <h4>Wiadomości kontaktowe</h4>
+                <?php
+                if ($result = $connection->query(sprintf("SELECT * FROM help LIMIT 10"))) {
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<a href="message.php?id=' . $row['id'] . '" class="event-row">' . $row['type'] . ' - ' . $row['email'] . '</a>';
+                        }
+                    } else {
+                        echo '<p>Brak wiadomości</p>';
+                    }
+                }
+                ?>
+            </form>
+        </section>
     </main>
 </body>
 

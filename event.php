@@ -21,7 +21,7 @@ require_once "db.php";
 </head>
 
 <body>
-    <?php include_once "components/navbar/navbar.php"; ?>
+    <?php include_once "components/navbar/indexnavbar.php"; ?>
     <main>
         <section>
             <a href="events.php">
